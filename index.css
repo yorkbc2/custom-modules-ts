@@ -1,0 +1,147 @@
+/*Modal window styles*/
+.modal-window {
+	display: none; 
+	/*Default none for closed windows*/
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+
+.modal-window-background {
+	position: fixed;
+	z-index: 101;
+
+	background: rgba(0,0,0,0.45);
+
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 101;
+}
+
+.modal-window-block {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+
+	background-color: #fff;
+	padding: 25px;
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+
+	min-width: 540px;
+
+	left: 50%;
+	top: 50%;
+
+	transform: translateY(-50%) translateX(-50%);
+	z-index: 102;
+}
+
+.modal-window-block._center {
+	text-align: center;
+}
+
+.modal-window-close {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	font-size: 32px;
+	color: #000;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+/*Form styles*/
+
+.form,
+.form > .form-row {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.form > .form-submit-container {
+	margin: 15px 0;
+}
+
+.form > .form-row > label {
+	font-size: 18px;
+	padding: 10px 0;
+}
+
+.form > .form-row > input {
+	font-size: 16px;
+	padding: 10px 15px;
+	border: 1px solid #e7e7e7;
+	border-radius: 3px;
+	box-shadow: 1px 2px 3px rgba(0,0,0,0.35);
+}
+
+.form > .form-row > input.form-error {
+	border: 2px solid #ff3333;
+	box-shadow: 0px 0px 12px rgba(255, 0, 0, 0.5);
+}
+
+.form > .form-submit-container > button[type="submit"] {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #fff;
+	background-color: #2196f3;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.form > .form-submit-container > button[type="submit"]:hover {
+	background-color: #42a5f5;
+}
+
+
+/*.form-error-popup-message {
+	width: 320px;
+	background-color: #ff3333;
+	color: #fff;
+	font-size: 17px;
+	padding: 10px;
+	text-align: center;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 110;
+}*/
+
+/*Media query for modal block*/
+@media screen and (max-width: 590px) {
+	.modal-window-block {
+		width: 90%;
+		padding: 10px;
+
+		transform: none;
+		left: 5%;
+		top: 20px;
+	}
+}
