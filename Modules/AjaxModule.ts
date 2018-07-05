@@ -4,11 +4,8 @@ export const sendPromisedRequest = (url="", options) => {
 
 	return new Promise((resolve, reject) => {
 		var xhr: XMLHttpRequest = new XMLHttpRequest();
-
-		xhr.setRequestHeader('Content-Type', 'application/json');
-
 		xhr.open(method, url);
-
+		xhr.setRequestHeader('Content-Type', 'application/json');
 		xhr.onload = function () {
 			if (xhr.status >= 200 && xhr.status < 301) {
 				resolve(xhr.responseText);
