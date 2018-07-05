@@ -22,6 +22,6 @@ export const sendPromisedRequest = (url="", options) => {
 			}
 		}
 
-		method === "GET"? xhr.send(): xhr.send(data);
+		method === "GET"? xhr.send(): xhr.send(JSON.stringify(data));
 	})
 }

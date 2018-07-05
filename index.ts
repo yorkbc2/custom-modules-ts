@@ -7,4 +7,4 @@ import './Components/FormInterfaces';
 (function () {
 	(<any>window).Modal = Modal;
 	(<any>window).Form = Form;
-}())
+}())  
