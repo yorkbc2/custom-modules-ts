@@ -5,6 +5,8 @@ export const sendPromisedRequest = (url="", options) => {
 	return new Promise((resolve, reject) => {
 		var xhr: XMLHttpRequest = new XMLHttpRequest();
 
+		xhr.setRequestHeader('Content-Type', 'application/json');
+
 		xhr.open(method, url);
 
 		xhr.onload = function () {
@@ -22,6 +24,6 @@ export const sendPromisedRequest = (url="", options) => {
 			}
 		}
 
-		method === "GET"? xhr.send(): xhr.send(JSON.stringify(data));
+		method === "GET"? xhr.send(): xhr.send(data);
 	})
 }
