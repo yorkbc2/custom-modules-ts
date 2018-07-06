@@ -137,9 +137,9 @@ function addInputEvent (elements, data:Object) {
 	}
 }
 
-function inputEvent (data:Object, event: any) {
+function inputEvent (data:Object, event: any, SQLInjectionRegular: RegExp = /<[^>]{0,}[^/]>/g) {
 	if (event.target.name !== "")
-		data[event.target.name] = event.target.value.replace(this.SQLInjectionRegular, '');
+		data[event.target.name] = event.target.value.replace(SQLInjectionRegular, '');
 }
 
 function usePattern (pattern: FormPattern, value: string): boolean {
